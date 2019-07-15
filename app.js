@@ -96,18 +96,27 @@ class LocalStorage {
 
 // TODO finish filling out the functionality
 class WeightMath {
-  averageWeight() {}
+  averageWeight() {
+    let weights = LocalStorage.getWeights();
+    weights.forEach(weight => {
+      console.log(weight['weight']);
+    });
+  }
 
   minimumWeight() {}
 
   maximumWeight() {}
 }
 
+// For testing
+const weightMath = new WeightMath();
+
+weightMath.averageWeight();
+
 document.addEventListener('DOMContentLoaded', LocalStorage.displayWeights);
 
 document.querySelector('#weight-form').addEventListener('submit', e => {
   const weight = document.querySelector('#weight').value;
-
   let today = new Date();
   let todaysDate = `${today.getFullYear()} - ${today.getMonth()} - ${today.getDate()}`;
 
