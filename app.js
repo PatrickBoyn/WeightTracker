@@ -94,7 +94,6 @@ class LocalStorage {
   }
 }
 
-// TODO finish filling out the functionality
 class WeightMath {
   averageWeight() {
     let weights = LocalStorage.getWeights(),
@@ -126,6 +125,7 @@ class WeightMath {
   maximumWeight() {
     let weights = LocalStorage.getWeights();
 
+    // Reversed order of the minWeight.
     let maxWeight = weights.reduce((previous, current) =>
       previous.weight < current.weight ? previous : current['weight']
     );
