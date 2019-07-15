@@ -96,11 +96,11 @@ class LocalStorage {
 
 // TODO finish filling out the functionality
 class WeightMath {
-  averageWeight(weight) {}
+  averageWeight() {}
 
-  minimumWeight(weight) {}
+  minimumWeight() {}
 
-  maximumWeight(weight) {}
+  maximumWeight() {}
 }
 
 document.addEventListener('DOMContentLoaded', LocalStorage.displayWeights);
@@ -130,6 +130,8 @@ document.querySelector('#weight-form').addEventListener('submit', e => {
 
 document.querySelector('.display-weight-list').addEventListener('click', e => {
   const ui = new UI();
+
+  maths.averageWeight();
 
   ui.deleteWeight(e.target);
 
