@@ -106,10 +106,10 @@ class WeightMath {
       total += 1;
       sum += Number(weight['weight']);
     });
+
     average = sum / total;
-    console.log(total);
-    console.log(sum);
-    console.log(average);
+
+    return average;
   }
 
   minimumWeight() {}
