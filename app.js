@@ -99,7 +99,8 @@ class WeightMath {
   averageWeight() {
     let weights = LocalStorage.getWeights(),
       total = 0,
-      sum = 0;
+      sum = 0,
+      average;
 
     weights.forEach(weight => {
       total += 1;
@@ -147,11 +148,11 @@ document.querySelector('#weight-form').addEventListener('submit', e => {
 document.querySelector('.display-weight-list').addEventListener('click', e => {
   const ui = new UI();
 
-  maths.averageWeight();
-
   ui.deleteWeight(e.target);
 
-  LocalStorage.removeWeights(e.target.parentElement.parentElement.textContent);
+  LocalStorage.removeWeights(
+    e.target.parentElement.previousElementSibling.textContent
+  );
 
   ui.showAlert('Weight removed!', 'success');
 });
