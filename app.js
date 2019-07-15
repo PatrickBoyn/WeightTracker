@@ -21,6 +21,17 @@ class UI {
     list.appendChild(ul);
   }
 
+  addCalcToList(calculations) {
+    const list = document.querySelector('.calculations-list ');
+    const ul = document.createElement('ul');
+    ul.innerHTML = `
+    <li class="average-weight">Average Weight: ${calculations.averageWeight()}</li>
+    <li class="min-weight">Lowest Weight: ${calculations.minimumWeight()} On Date: 2019-7-14</li>
+    <li class="max-weight">Highest Weight: ${calculations.maximumWeight()} On Date: 2019-7-12</li>
+    `;
+    list.appendChild(ul);
+  }
+
   deleteWeight(target) {
     if (target.className === 'delete') {
       target.parentElement.parentElement.remove();
