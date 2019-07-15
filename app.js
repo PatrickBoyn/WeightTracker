@@ -112,7 +112,15 @@ class WeightMath {
     return average;
   }
 
-  minimumWeight() {}
+  minimumWeight() {
+    let weights = LocalStorage.getWeights();
+
+    let minWeight = weights.reduce((previous, current) =>
+      previous.weight < current.weight ? previous : current['weight']
+    );
+
+    return minWeight;
+  }
 
   maximumWeight() {}
 }
@@ -120,7 +128,7 @@ class WeightMath {
 // For testing
 const weightMath = new WeightMath();
 
-weightMath.averageWeight();
+weightMath.minimumWeight();
 
 document.addEventListener('DOMContentLoaded', LocalStorage.displayWeights);
 
