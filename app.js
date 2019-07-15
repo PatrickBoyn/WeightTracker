@@ -115,20 +115,24 @@ class WeightMath {
   minimumWeight() {
     let weights = LocalStorage.getWeights();
 
+    // Found on a stack overflow, works perfectly to get the minimum weight.
     let minWeight = weights.reduce((previous, current) =>
+      previous.weight > current.weight ? current : previous['weight']
+    );
+    console.log(minWeight);
+    return Number(minWeight);
+  }
+
+  maximumWeight() {
+    let weights = LocalStorage.getWeights();
+
+    let maxWeight = weights.reduce((previous, current) =>
       previous.weight < current.weight ? previous : current['weight']
     );
 
-    return minWeight;
+    return Number(maxWeight);
   }
-
-  maximumWeight() {}
 }
-
-// For testing
-const weightMath = new WeightMath();
-
-weightMath.minimumWeight();
 
 document.addEventListener('DOMContentLoaded', LocalStorage.displayWeights);
 
