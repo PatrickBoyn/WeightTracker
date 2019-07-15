@@ -97,10 +97,17 @@ class LocalStorage {
 // TODO finish filling out the functionality
 class WeightMath {
   averageWeight() {
-    let weights = LocalStorage.getWeights();
+    let weights = LocalStorage.getWeights(),
+      total = 0,
+      sum = 0;
+
     weights.forEach(weight => {
-      console.log(weight['weight']);
+      total += 1;
+      sum += Number(weight['weight']);
     });
+
+    console.log(total);
+    console.log(sum);
   }
 
   minimumWeight() {}
