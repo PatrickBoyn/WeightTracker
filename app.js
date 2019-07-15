@@ -119,7 +119,7 @@ class WeightMath {
     let minWeight = weights.reduce((previous, current) =>
       previous.weight > current.weight ? current : previous['weight']
     );
-    console.log(minWeight);
+
     return Number(minWeight);
   }
 
