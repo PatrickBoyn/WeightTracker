@@ -106,7 +106,7 @@ class WeightMath {
 document.addEventListener('DOMContentLoaded', LocalStorage.displayWeights);
 
 document.querySelector('#weight-form').addEventListener('submit', e => {
-  const weight = Number(document.querySelector('#weight').value);
+  const weight = document.querySelector('#weight').value;
 
   let today = new Date();
   let todaysDate = `${today.getFullYear()} - ${today.getMonth()} - ${today.getDate()}`;
